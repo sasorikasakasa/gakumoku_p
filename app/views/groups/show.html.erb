@@ -1,0 +1,30 @@
+<h1>Groupの詳細画面</h1>
+
+
+<p><%= @group.group_name %></p>
+<p><%= @group.group_introduction %></p>
+<p><%= @group.group_image %></p>
+<% if @group.follow_by_user?(current_user) %>
+  <p><%= link_to "フォロー解除" , follow_status_update_group_path(@group), method: :post %>
+<% else %>
+  <p><%= link_to "フォローする" , follow_status_update_group_path(@group), method: :post %>
+<% end %>
+
+<% if @group.join_by_user?(current_user) %>
+  <p><%= link_to "out" , join_status_update_group_path(@group), method: :post %>
+<% else %>
+  <p><%= link_to "join" , join_status_update_group_path(@group), method: :post %>
+<% end %>
+
+
+<p><%= link_to "編集", edit_group_path(@group) %></p>
+<p><%= link_to "一覧画面へ", groups_path %></p>
+<br>
+<p><%= link_to "削除" , group_path(@group) ,method: :delete %></p>
+
+<p><%= link_to "フォロワー一覧", followers_group_path(@group) %></p>
+<p><%= link_to "メンバー一覧", members_group_path(@group) %></p>
+<p><%= link_to "グループイベント一覧", events_group_path(@group) %></p>
+
+
+

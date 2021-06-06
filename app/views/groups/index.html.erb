@@ -1,0 +1,18 @@
+<h1>Group一覧画面</h1>
+
+<table>
+  <thead>
+    <th>
+      <td>グループ名</td>
+      <td colspan="1"></td>
+    </th>
+  </thead>
+
+  <tbody>
+    <% @all_group.each do |group|%>
+    <tr>
+      <td>・<%= link_to group.group_name, group_path(group) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

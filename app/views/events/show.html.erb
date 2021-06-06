@@ -1,0 +1,34 @@
+<h1>Event詳細画面</h1>
+
+<table>
+
+  <tbody>
+      <tr></tr>
+        <td>イベント名：<%= link_to @event.event_name, event_path(@event) %></td>
+      </tr>
+      <tr>
+        <td>開始時刻：<%= @event.start_time %></td>
+      </tr>
+      <tr>
+        <td>申込締切時刻：<%= @event.deadline_time %></td>
+      </tr>
+      <tr>
+        <td>参加枠：<%= @event.limit_num %></td>
+      </tr>
+      <tr>
+        <td>イベント画像：<%= @event.event_image %></td>
+      </tr>
+      <tr>
+        <td>タグ画像：<%= @event.event_tag_image %></td>
+      </tr>
+      <% if @event.join_by_user?(current_user) %>
+        <p><%= link_to "参加をキャンセルする" , apply_status_update_event_path(@event), method: :post %>
+      <% else %>
+        <p><%= link_to "参加する" , apply_status_update_event_path(@event), method: :post %>
+      <% end %>
+      <tr>
+        <p><%= link_to "申込者一覧", applies_event_path(@event) %></p>
+      </tr>
+  </tbody>
+
+</table>

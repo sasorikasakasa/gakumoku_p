@@ -1,0 +1,21 @@
+<h1>Groupの新規作成画面</h1>
+
+<%= form_with model:@new_group ,local: true do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :group_name, class: "form-control", placeholder: "グループの名前" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :group_introduction, class: "form-control", placeholder: "グループの紹介" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :group_image, class: "form-control", placeholder: "グループの画像" %>
+  </div>
+
+  <%= f.submit "作成" %>
+
+<% end %>
+
+

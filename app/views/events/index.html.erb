@@ -1,0 +1,32 @@
+<h1>Event掲載画面</h1>
+
+<table>
+
+  <tbody>
+    <% @all_event.each do |event|%>
+      <tr></tr>
+        <td>イベント名：<%= link_to event.event_name, event_path(event) %></td>
+      </tr>
+      <tr>
+        <td>開始時刻：<%= event.start_time %></td>
+      </tr>
+      <tr>
+        <td>申込締切時刻：<%= event.deadline_time %></td>
+      </tr>
+      <tr>
+        <td>参加枠：<%= event.limit_num %></td>
+      </tr>
+      <tr>
+        <td>イベント画像：<%= event.event_image %></td>
+      </tr>
+      <tr>
+        <td>タグ画像：<%= event.event_tag_image %></td>
+      </tr>
+      <tr>
+        <td><br></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+

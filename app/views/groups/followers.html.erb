@@ -1,0 +1,15 @@
+<h1>フォロワー一覧</h1>
+
+<table>
+  <thead>
+      <td>フォロワー名</td>
+  </thead>
+
+  <tbody>
+    <% @followers.each do |follower|%>
+    <tr>
+      <td><%= follower.user.first_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

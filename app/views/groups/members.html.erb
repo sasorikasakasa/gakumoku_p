@@ -1,0 +1,15 @@
+<h1>メンバー一覧</h1>
+
+<table>
+  <thead>
+      <td>メンバー名</td>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member|%>
+    <tr>
+      <td><%= member.user.first_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

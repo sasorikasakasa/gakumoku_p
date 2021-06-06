@@ -1,0 +1,15 @@
+<h1>申込者一覧</h1>
+
+<table>
+  <thead>
+      <td>申込者</td>
+  </thead>
+
+  <tbody>
+    <% @applies.each do |applies_user|%>
+    <tr>
+      <td><%= applies_user.user.first_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
