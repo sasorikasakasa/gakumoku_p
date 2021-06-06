@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 import "bootstrap";
-import { Modal } from "bootstrap";
+import "../stylesheets/application"
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"

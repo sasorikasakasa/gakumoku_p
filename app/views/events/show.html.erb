@@ -1,19 +1,21 @@
 <h1>Event詳細画面</h1>
 
 <table>
-
   <tbody>
-      <tr></tr>
+      <tr>
         <td>イベント名：<%= link_to @event.event_name, event_path(@event) %></td>
       </tr>
       <tr>
         <td>開始時刻：<%= @event.start_time %></td>
       </tr>
       <tr>
+        <td>終了時刻：<%= @event.finish_time %></td>
+      </tr>
+      <tr>
         <td>申込締切時刻：<%= @event.deadline_time %></td>
       </tr>
       <tr>
-        <td>参加枠：<%= @event.limit_num %></td>
+        <td>参加数：<%= @event.user_events.where(apply_status: true).count %>/<%= @event.limit_num %></td>
       </tr>
       <tr>
         <td>イベント画像：<%= @event.event_image %></td>
@@ -30,5 +32,4 @@
         <p><%= link_to "申込者一覧", applies_event_path(@event) %></p>
       </tr>
   </tbody>
-
 </table>

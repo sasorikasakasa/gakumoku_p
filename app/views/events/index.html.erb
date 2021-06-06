@@ -1,7 +1,6 @@
 <h1>Event掲載画面</h1>
 
 <table>
-
   <tbody>
     <% @all_event.each do |event|%>
       <tr></tr>
@@ -11,10 +10,13 @@
         <td>開始時刻：<%= event.start_time %></td>
       </tr>
       <tr>
+        <td>終了時刻：<%= event.finish_time %></td>
+      </tr>
+      <tr>
         <td>申込締切時刻：<%= event.deadline_time %></td>
       </tr>
       <tr>
-        <td>参加枠：<%= event.limit_num %></td>
+        <td>参加数：<%= event.user_events.where(apply_status: true).count %>/<%= event.limit_num %></td>
       </tr>
       <tr>
         <td>イベント画像：<%= event.event_image %></td>
@@ -27,6 +29,5 @@
       </tr>
     <% end %>
   </tbody>
-
 </table>
 
