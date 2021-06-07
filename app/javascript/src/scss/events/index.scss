@@ -1,0 +1,121 @@
+.top-left-part {
+  padding: 0;
+  margin: 0 10px 5px 0;
+  background: #dc3444;
+  color: var(--bs-white);
+  h1 {
+    margin: 0px;
+    text-align: center;
+  }
+}
+
+.top-right-part {
+  display: flex;
+  background: #ffffff;
+  padding: 0;
+  margin: 0 0 5px 0;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  div {
+    margin: auto 0;
+    h1 {
+      margin: 0px;
+      border-top-style: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.bottom-left-part {
+  padding: 0;
+  margin: 0 10px 0 0;
+  background: rgb(220, 52, 68);
+  color: var(--bs-white);
+  height: 300px;
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+
+.bottom-right-part {
+  padding: 0px;
+}
+
+.br-box {
+  position: relative;
+  img {
+    width: 100%;
+    opacity: 1;
+    top: 0;
+    height: 300px;
+  }
+  .content-box {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 0;
+    left: 20%;
+    height: 300px;
+    .organizer-user-box {
+      display: flex;
+      justify-content: flex-start;
+      height: 30px;
+      padding: 5px 10px;
+      margin: 0 0 10px 0;
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+      }
+      p {
+        height: 30px;
+        font-size: 20px;
+        padding: 0 5px;
+      }
+    }
+    .attraction-title {
+      p {
+        padding: 5px 10px;
+        margin: 0 0 5px 0;
+      }
+    }
+    .event-detail-box {
+      width: 90%;
+      border-radius: 20px;
+      margin: 0 5%;
+      border-style: solid;
+      border-color: var(--bs-secondary);
+      padding: 5px 10px;
+      .event-detail-content {
+        margin: 0 0 5px;
+      }
+      div p {
+        margin: 0;
+      }
+    }
+    .content-box-footer {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 5%;
+      padding: 15px 0 10px 0;
+      p {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+      }
+      button {
+        float: right;
+        background: var(--bs-red);
+      }
+    }
+  }
+}

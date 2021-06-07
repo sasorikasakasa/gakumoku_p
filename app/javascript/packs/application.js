@@ -5,7 +5,6 @@
 
 import "bootstrap";
 import "src/scss/application.scss"
-import "../images"
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
