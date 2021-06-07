@@ -4,7 +4,8 @@
 // that code so it'll be compiled.
 
 import "bootstrap";
-import "../stylesheets/application"
+import "src/scss/application.scss"
+import "../images"
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -14,3 +15,6 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+const images = require.context("../images", true);
+const imagePath = name => images(name, true);

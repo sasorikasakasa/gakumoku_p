@@ -1,0 +1,23 @@
+@import "bootstrap";
+
+body {
+  background: rgb(237, 240, 244);
+}
+header {
+  background-color: #1cc996;
+  padding: 5px 10px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.header_item {
+  display: flex;
+  text-decoration: none;
+}
+
+.header_item a {
+  text-decoration: none;
+  color: white;
+  padding-right: 20px;
+}

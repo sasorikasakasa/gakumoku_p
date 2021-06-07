@@ -13,6 +13,17 @@
   </head>
 
   <body>
+  <header>
+    <div><h2>Gakumoku</h2></div>
+    <div class="header_item">
+      <%= link_to "event" ,events_path %>
+      <%= link_to "group" ,groups_path %>
+      <%= link_to "mypage" ,events_path %>
+    <div>
+  </header>
+
+  <main>
     <%= yield %>
+  </main>
   </body>
 </html>
