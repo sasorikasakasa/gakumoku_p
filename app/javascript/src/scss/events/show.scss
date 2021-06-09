@@ -23,7 +23,8 @@
           border-left-color: var(--bs-green);
         }
         div {
-          height: 80px;
+          padding: 5px 10px;
+          min-height: 30px;
           border-style: solid;
           border-color: rgb(145, 152, 156);
           border-left: 3px solid rgb(145, 152, 156);
@@ -40,7 +41,8 @@
           border-left-color: var(--bs-green);
         }
         div {
-          height: 80px;
+          padding: 5px 10px;
+          min-height: 80px;
           border-style: solid;
           border-color: rgb(145, 152, 156);
           border-left: 3px solid rgb(145, 152, 156);

@@ -1,0 +1,181 @@
+.event-need-info {
+  margin: 20px auto 40px auto;
+  .event-need-header {
+    .col {
+      background: linear-gradient(98deg, rgb(241, 148, 38), white 100%), #ffa05c;
+      margin: 0 0 30px 0;
+    }
+    h1 {
+      color: var(--bs-white);
+      margin: 0;
+      padding: 5px 0 8px 10px;
+    }
+  }
+
+  .event-need-info-time {
+    margin-bottom: 30px;
+    .left-side {
+      background: var(--bs-teal);
+      color: var(--bs-light);
+    }
+    .right-side {
+      padding: 0px;
+      .time-box {
+        width: 100%;
+        border-style: none;
+        border-color: var(--bs-secondary);
+        background: var(--bs-white);
+        padding: 20px 0 15px 20px;
+        .start-end-time {
+          margin: 0 0 15px 0;
+          h5 {
+            text-align: left;
+            color: var(--bs-gray);
+            margin: 0 0 5px 0;
+            font-family: Actor, sans-serif;
+            padding: 0 0 0 5px;
+          }
+          .input-time {
+            border-left: 3px solid rgb(161, 226, 254);
+            input {
+              text-align: left;
+              width: 50%;
+              padding: 5px 10px;
+              background: #a1e2fe;
+              margin: 0 0 15px 0;
+              border-style: none;
+              background: rgb(161, 226, 254);
+            }
+          }
+        }
+        .apply-start-end-time {
+          h6 {
+            text-align: left;
+            color: var(--bs-gray);
+            margin: 0 0 5px 0;
+            font-family: Actor, sans-serif;
+            padding: 0 0 0 5px;
+          }
+          .apply-time-box {
+            border-left: 3px solid rgb(198, 245, 237);
+            input {
+              text-align: left;
+              width: 50%;
+              padding: 5px 10px;
+              background: #a1e2fe;
+              margin: 0 0 15px 0;
+              border-style: none;
+              background: #c6f5ed;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .event-need-info-content {
+    margin-bottom: 30px;
+    .left-side {
+      background: var(--bs-teal);
+      color: var(--bs-light);
+    }
+    .right-side {
+      padding: 0px;
+      .event-content-container {
+        width: 100%;
+        border-style: none;
+        border-color: var(--bs-secondary);
+        background: var(--bs-white);
+        padding: 10px 0 0 20px;
+        .event-name-box,
+        .event-naiyou-box {
+          h5 {
+            text-align: left;
+            color: var(--bs-gray);
+            margin: 0;
+            font-family: Actor, sans-serif;
+            padding: 0 0 0 5px;
+          }
+          h4 {
+            text-align: left;
+            width: 80%;
+            padding: 5px 10px;
+            background: #f8c48d;
+          }
+          p {
+            background: var(--bs-light);
+            width: 80%;
+            font-size: 18px;
+            font-family: Actor, sans-serif;
+            color: var(--bs-gray);
+            padding: 15px 10px 10px 10px;
+            border: 2px none var(--bs-secondary);
+            border-top: solid;
+            border-bottom: solid;
+            text-align: left;
+            margin: 0;
+          }
+        }
+        h6 {
+          text-align: left;
+          color: var(--bs-gray);
+          margin: 15px 0 0 0;
+          padding: 0;
+          img {
+            height: 30px;
+            width: 30px;
+          }
+        }
+        .flex-box {
+          display: flex;
+          padding: 0 0 20px 0;
+          .flex-box-left {
+            width: 30%;
+            padding: 0 10px 0 0;
+            h6 {
+              text-align: left;
+              color: var(--bs-gray);
+              margin: 0;
+              padding: 15px 0 5px 5px;
+            }
+          }
+          .flex-box-right {
+            width: 65%;
+            margin: 10px 0 0 0;
+            // background: url("images/meeting.jpg");
+            background-size: cover;
+            opacity: 0.75;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            h1 {
+              text-align: center;
+              color: var(--bs-white);
+              background: var(--bs-gray);
+            }
+          }
+        }
+        .event-url-box {
+          padding: 5px;
+          h5 {
+            text-align: left;
+            color: var(--bs-gray);
+            margin: 0;
+            font-family: Actor, sans-serif;
+            padding: 0 0 5px 5px;
+          }
+          h4 {
+            text-align: left;
+            width: 90%;
+            padding: 5px 10px;
+            background: var(--bs-white);
+            height: 30px;
+            border-style: solid;
+            border-color: rgb(145, 152, 156);
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

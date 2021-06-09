@@ -1,30 +1,102 @@
+<%= javascript_pack_tag 'events/new' %>
+<%= stylesheet_pack_tag 'events/new' %>
+
+
 <h1>Eventの新規作成</h1>
 
 <%= form_with model:@new_event ,local: true do |f| %>
 
-  <div class="form-group">
-    <%= f.text_field :event_name, class: "form-control", placeholder: "イベント名" %>
+<div class="container event-need-info">
+  <div class="row event-need-header">
+    <div class="col">
+        <h1>Need(必須)</h1>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.text_area :event_introduction, class: "form-control", placeholder: "イベントの説明" %>
+  <div class="row event-need-info-time">
+    <div class="col-sm-1 left-side"></div>
+    <div class="col right-side">
+      <div class="time-box">
+        <div class="start-end-time">
+          <h5>＊開催時間</h5>
+          <div class="input-time">
+              <%= f.datetime_field :start_time, class: "form-control" %>
+              <%= f.datetime_field :finish_time, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="apply-start-end-time">
+          <h6>＊参加受付期間</h6>
+          <div class="apply-time-box">
+              <%= f.datetime_field :start_time, class: "form-control" %>
+              <%= f.datetime_field :deadline_time, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.datetime_field :start_time, class: "form-control" %>
+
+  <div class="row event-need-info-content">
+    <div class="col-sm-1 left-side"></div>
+    <div class="col right-side">
+      <div class="event-content-container">
+        <div class="event-name-box">
+          <h5>＊イベント名</h5>
+          <h4><%= f.text_field :event_name, class: "form-control", placeholder: "イベント名" %></h4>
+        </div>
+        <div class="event-naiyou-box">
+          <h5>＊作業内容</h5>
+          <p><%= f.text_area :event_introduction, class: "form-control", placeholder: "作業内容の説明" %></p>
+        </div>
+        <h6>
+          ・イベントアイコン&nbsp;&nbsp;
+          <img src="<%= asset_pack_path "media/images/react.png" %>"/>
+        </h6>
+
+        <div class="flex-box">
+          <div class="flex-box-left">
+              <h6>＊イベントタグ</h6>
+              <div class="dropdown" style="margin: 0 0 0 5px">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  type="button"
+                  style="text-align: left"
+                >
+                  Dropdown
+                </button>
+              </div>
+              <h6>＊参加上限人数</h6>
+              <div style="display: flex; padding: 0 0 0 10px; height: 35px">
+                <%= f.text_field :limit_num, class: "form-control",style:"height: 30px; width: 30px;"%>
+                <p style="font-size: 23px">人</p>
+              </div>
+              <h6>＊参加資格</h6>
+              <div class="dropdown" style="margin: 0 0 0 5px">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  type="button"
+                  style="text-align: left"
+                >
+                  Dropdown
+                </button>
+              </div>
+          </div>
+
+          <div class="flex-box-right">
+            <h1>default image</h1>
+          </div>
+        </div>
+
+        <div class="event-url-box">
+          <h5>＊Zoom URL (当日使用する予定のURL)&nbsp;</h5>
+          <h4> http://zoom_maeda_wataruno_heya_desuyo.zoom.jp</h4>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.datetime_field :finish_time, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.datetime_field :deadline_time, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :limit_num, class: "form-control", placeholder: "参加人数枠" %>
-  </div>
+</div>
 
   <div class="form-group">
     <%= f.text_field :event_image, class: "form-control", placeholder: "イベントのイメージ画像" %>
@@ -38,10 +110,5 @@
     <%= f.collection_select :group_id , @own_group, :id , :group_name,:include_blank => "グループを選ぶ" %>
   </div>
 
-
-
-
-
   <%= f.submit "作成" %>
-
 <% end %>
