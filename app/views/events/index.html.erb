@@ -4,73 +4,7 @@
 <h1>Event掲載画面</h1>
 
 <% @all_event.each do |event|%>
-
-<div class="container">
-
-  <div class="row top">
-    <div class="col-sm-2 top-left-part">
-      <h1>5/25</h1>
-    </div>
-
-    <div class="col top-right-part">
-      <img src="<%= asset_pack_path "media/images/rails_logo.png" %>"/>
-      <div>
-        <h1>&nbsp;<%= link_to event.event_name, event_path(event) %></h1>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="row bottom">
-
-    <div class="col-sm-2 offset-sm-6 bottom-left-part">
-      <h2>18:00&nbsp;</h2>
-      <h1>
-        |<br />|<br />|<br />|<br />|
-      </h1>
-      <h2>18:00&nbsp;</h2>
-    </div>
-
-
-    <div class="col bottom-right-part">
-      <div class="br-box">
-
-        <img src=<%= asset_pack_path "media/images/meeting.jpg" %>/>
-        <div class="content-box">
-          <div class="organizer-user-box">
-            <img src="<%= asset_pack_path "media/images/react.png" %>"/>
-            <p>佐々木&nbsp; 成</p>
-          </div>
-          <div class="attraction-title">
-            <p>&nbsp;✔️ <strong>こんなことやります</strong></p>
-          </div>
-          <div class="event-detail-box">
-            <div class="event-detail-content">
-              <p>【作業内容】</p>
-              <p>各々で作業を進めてもらってOKです。</p>
-            </div>
-            <div>
-              <p>【参加条件】</p>
-              <p>特にありません。</p>
-              <p>初めての参加大歓迎です。</p>
-            </div>
-          </div>
-
-          <div class="content-box-footer">
-            <p>参加者数<br /><%= event.user_events.where(apply_status: true).count %>/<%= event.limit_num %>人</p>
-            <p>募集終了まで<br /><%= event.deadline_time.strftime("%m-%d %H:%M:%S") %></p>
-            <button class="btn btn-primary" type="button">
-              参加する
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
-
+  <%= render "one_event", event: event%>
 <% end %>
 
 

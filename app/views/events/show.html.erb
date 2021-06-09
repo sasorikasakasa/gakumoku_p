@@ -1,27 +1,14 @@
+<%= javascript_pack_tag 'events/index' %>
+<%= stylesheet_pack_tag 'events/index' %>
+<%= javascript_pack_tag 'events/show' %>
+<%= stylesheet_pack_tag 'events/show' %>
+
 <h1>Event詳細画面</h1>
 
 <table>
   <tbody>
       <tr>
         <td>イベント名：<%= link_to @event.event_name, event_path(@event) %></td>
-      </tr>
-      <tr>
-        <td>開始時刻：<%= @event.start_time %></td>
-      </tr>
-      <tr>
-        <td>終了時刻：<%= @event.finish_time %></td>
-      </tr>
-      <tr>
-        <td>申込締切時刻：<%= @event.deadline_time %></td>
-      </tr>
-      <tr>
-        <td>参加数：<%= @event.user_events.where(apply_status: true).count %>/<%= @event.limit_num %></td>
-      </tr>
-      <tr>
-        <td>イベント画像：<%= @event.event_image %></td>
-      </tr>
-      <tr>
-        <td>タグ画像：<%= @event.event_tag_image %></td>
       </tr>
       <% if @event.join_by_user?(current_user) %>
         <p><%= link_to "参加をキャンセルする" , apply_status_update_event_path(@event), method: :post %>
@@ -33,3 +20,63 @@
       </tr>
   </tbody>
 </table>
+
+
+
+<%= render "one_event", event: @event%>
+
+<div class="container event-detail-top">
+    <div class="row">
+        <div class="col-sm-1 left-side"></div>
+        <div class="col right-side">
+            <div class="right-side-detail-box">
+                <div class="event-purpose-box">
+                    <h5>・イベントの目的</h5>
+                    <div></div>
+                </div>
+                <div class="event-news-box">
+                    <h5>・お知らせ</h5>
+                    <div></div>
+                </div>
+                <h5>・重複参加OK?<br>&nbsp; &nbsp; &nbsp;Yes ☑︎ ｜ No □</h5>
+                <h5>・途中退室OK?<br>&nbsp; &nbsp; &nbsp;Yes ☑︎ ｜ No □</h5>
+                <div class="detail-footer">
+                    <div>
+                        <h5>・イベントをFollowerに通知する</h5>
+                        <h5>&nbsp; &nbsp; &nbsp;Yes ☑︎ ｜ No □</h5>
+                    </div><button class="btn btn-primary" type="button">参加する</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container event-detail-bottom">
+    <div class="row">
+        <div class="col-sm-1 left-side"></div>
+        <div class="col right-side">
+            <div class="event-organizer-detail-box">
+                <div class="organizer-name">
+                    <h5>・開催者について</h5>
+                    <div>
+                      <img src="<%= asset_pack_path "media/images/react.png" %>">
+                      <p>佐々木&nbsp; 成</p>
+                    </div>
+                </div>
+                <div class="related-organizer">
+                    <h6 class="organizer-like">これまでのイベントいいね数：３００</h6>
+                    <div class="organizer-footer">
+                        <div>
+                            <h6>開催者のプロフィールを見る</h6>
+                            <h6>このイベントについて質問する</h6>
+                        </div>
+                        <div>
+                          <button class="btn btn-primary" type="button">参加する</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
