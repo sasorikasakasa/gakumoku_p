@@ -1,8 +1,6 @@
 <%= javascript_pack_tag 'events/index' %>
 <%= stylesheet_pack_tag 'events/index' %>
 
-<h1>Event掲載画面</h1>
-
 <% @all_event.each do |event|%>
   <%= render "one_event", event: event%>
 <% end %>

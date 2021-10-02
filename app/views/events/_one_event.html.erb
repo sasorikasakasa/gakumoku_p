@@ -8,7 +8,7 @@
     <div class="col top-right-part">
       <img src="<%= asset_pack_path "media/images/rails_logo.png" %>"/>
       <div>
-        <h1>&nbsp;<%= link_to event.event_name, event_path(event) %></h1>
+        <h1>&nbsp;<%= link_to event.name, event_path(event) %></h1>
       </div>
     </div>
   </div>
@@ -50,11 +50,11 @@
           </div>
 
           <div class="content-box-footer">
-            <p>参加者数<br /><%= event.user_events.where(apply_status: true).count %>/<%= event.limit_num %>人</p>
+            <p>参加者数<br /><%= event.user_events.where(apply_status: true).count %>/<%= event.max_apply_number %>人</p>
             <p>募集終了まで<br /><%= event.deadline_time.strftime("%m-%d %H:%M:%S") %></p>
             <%= link_to event_path(event) do %>
               <button class="btn btn-primary" type="button">
-                参加する
+                詳細見る
               </button>
             <% end %>
           </div>

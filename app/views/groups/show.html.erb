@@ -1,9 +1,9 @@
 <h1>Groupの詳細画面</h1>
 
 
-<p><%= @group.group_name %></p>
-<p><%= @group.group_introduction %></p>
-<p><%= @group.group_image %></p>
+<p><%= @group.name %></p>
+<p><%= @group.introduction %></p>
+<p><%= @group.icon_image %></p>
 <% if @group.follow_by_user?(current_user) %>
   <p><%= link_to "フォロー解除" , follow_status_update_group_path(@group), method: :post %>
 <% else %>

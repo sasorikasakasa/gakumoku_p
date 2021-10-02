@@ -48,7 +48,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_name,:event_introdutcion,:start_time,:deadline_time,:limit_num,:event_image,:event_tag_image,:group_id,:finish_time)
+    params.require(:event).permit(:name,:introdutcion,:start_time,:finish_time,:deadline_time,:max_apply_number,:icon_image,:tag_image,:group_id,:zoom_url)
   end
 
 end

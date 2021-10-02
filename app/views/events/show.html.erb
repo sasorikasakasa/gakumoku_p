@@ -7,9 +7,6 @@
 
 <table>
   <tbody>
-      <tr>
-        <td>イベント名：<%= link_to @event.event_name, event_path(@event) %></td>
-      </tr>
       <% if @event.join_by_user?(current_user) %>
         <p><%= link_to "参加をキャンセルする" , apply_status_update_event_path(@event), method: :post %>
       <% else %>
@@ -17,6 +14,9 @@
       <% end %>
       <tr>
         <p><%= link_to "申込者一覧", applies_event_path(@event) %></p>
+      </tr>
+      <tr>
+        <p>zoomのurl(イベント当日、参加者にのみ表示されます。) : <%= @event.zoom_url %></p>
       </tr>
   </tbody>
 </table>

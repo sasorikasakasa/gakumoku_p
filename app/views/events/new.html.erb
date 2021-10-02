@@ -26,9 +26,8 @@
         </div>
 
         <div class="apply-start-end-time">
-          <h6>＊参加受付期間</h6>
+          <h6>＊参加受付締切時間</h6>
           <div class="apply-time-box">
-              <%= f.datetime_field :start_time, class: "form-control" %>
               <%= f.datetime_field :deadline_time, class: "form-control" %>
           </div>
         </div>
@@ -43,11 +42,11 @@
       <div class="event-content-container">
         <div class="event-name-box">
           <h5>＊イベント名</h5>
-          <h4><%= f.text_field :event_name, class: "form-control", placeholder: "イベント名" %></h4>
+          <h4><%= f.text_field :name, class: "form-control", placeholder: "イベント名" %></h4>
         </div>
         <div class="event-naiyou-box">
           <h5>＊作業内容</h5>
-          <p><%= f.text_area :event_introduction, class: "form-control", placeholder: "作業内容の説明" %></p>
+          <p><%= f.text_area :introduction, class: "form-control", placeholder: "作業内容の説明" %></p>
         </div>
         <h6>
           ・イベントアイコン&nbsp;&nbsp;
@@ -68,7 +67,7 @@
               </div>
               <h6>＊参加上限人数</h6>
               <div style="display: flex; padding: 0 0 0 10px; height: 35px">
-                <%= f.text_field :limit_num, class: "form-control",style:"height: 30px; width: 30px;"%>
+                <%= f.text_field :max_apply_num, class: "form-control",style:"height: 30px; width: 30px;"%>
                 <p style="font-size: 23px">人</p>
               </div>
               <h6>＊参加資格</h6>
@@ -90,7 +89,7 @@
 
         <div class="event-url-box">
           <h5>＊Zoom URL (当日使用する予定のURL)&nbsp;</h5>
-          <h4> http://zoom_maeda_wataruno_heya_desuyo.zoom.jp</h4>
+          <h4> <%= f.text_field :zoom_url, class: "form-control",placeholder: "http://zoom_maeda_wataruno_heya_desuyo.zoom.jp" %></h4>
         </div>
       </div>
     </div>
@@ -99,11 +98,11 @@
 </div>
 
   <div class="form-group">
-    <%= f.text_field :event_image, class: "form-control", placeholder: "イベントのイメージ画像" %>
+    <%= f.text_field :icon_image, class: "form-control", placeholder: "イベントのイメージ画像" %>
   </div>
 
   <div class="form-group">
-    <%= f.text_field :event_tag_image, class: "form-control", placeholder: "タグの画像" %>
+    <%= f.text_field :tag_image, class: "form-control", placeholder: "タグの画像" %>
   </div>
 
   <div class="form-group">
