@@ -38,7 +38,7 @@ class EventsController < ApplicationController
   def apply_status_update
     user_event = UserEvent.find_or_create_by(user_id: current_user.id,event_id: params[:id])
     user_event.update(apply_status: !user_event.apply_status)
-    redirect_to events_path
+    redirect_to event_path(params[:id])
   end
 
 

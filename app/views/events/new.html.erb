@@ -106,7 +106,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.collection_select :group_id , @own_group, :id , :group_name,:include_blank => "グループを選ぶ" %>
+    <%= f.collection_select :group_id , @own_group, :id , :name,:include_blank => "グループを選ぶ" %>
   </div>
 
   <%= f.submit "作成" %>

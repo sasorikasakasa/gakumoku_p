@@ -51,7 +51,8 @@
 
           <div class="content-box-footer">
             <p>参加者数<br /><%= event.user_events.where(apply_status: true).count %>/<%= event.max_apply_number %>人</p>
-            <p>募集終了まで<br /><%= event.deadline_time.strftime("%m-%d %H:%M:%S") %></p>
+            <p hidden class="deadline_time"><%= event.deadline_time.strftime('%Y/%m/%d %H:%M:%S') %></p>
+            <p>募集終了まで<br /><span class="rest_time"></span></p>
             <%= link_to event_path(event) do %>
               <button class="btn btn-primary" type="button">
                 詳細見る
