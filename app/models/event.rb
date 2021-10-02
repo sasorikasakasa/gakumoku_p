@@ -8,4 +8,5 @@ class Event < ApplicationRecord
     user_events.where(user_id: user,apply_status: true).exists?
   end
 
+
 end

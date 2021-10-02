@@ -36,9 +36,14 @@ class EventsController < ApplicationController
   end
 
   def apply_status_update
-    user_event = UserEvent.find_or_create_by(user_id: current_user.id,event_id: params[:id])
-    user_event.update(apply_status: !user_event.apply_status)
-    redirect_to event_path(params[:id])
+    event = Event.find(params[:id])
+    if event.deadline_time > DateTime.new()
+      user_event = UserEvent.find_or_create_by(user_id: current_user.id,event_id: event.id)
+      user_event.update(apply_status: !user_event.apply_status)
+      redirect_to event_path(event.id)
+    else
+      redirect_to events_path
+    end
   end
 
 
